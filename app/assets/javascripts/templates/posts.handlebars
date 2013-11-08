@@ -1,10 +1,24 @@
 <h1>Posts</h1>
 
+<div>
+  {{input type="text" placeholder="Title?" value=newTitle}}
+
+  {{input type="text" placeholder="Body?" value=newBody}}
+
+  <button {{action createPost}}>Save</button>
+</div>
+
 <ul>
   {{#each}}
-    <li>{{#linkTo "post" this}}{{title}}{{/linkTo}}</li>
+    <li>
+      {{#linkTo "post" this}}
+        {{title}}
+      {{/linkTo}}
+    </li>
   {{else}}
-    <li>There are no posts.</li>
+    <li>
+      There are no posts.
+    </li>
   {{/each}}
 </ul>
 

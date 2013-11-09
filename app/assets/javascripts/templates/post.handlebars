@@ -1,3 +1,11 @@
-<h1>{{title}}</h1>
+{{#if isEditing}}
+  {{input class="edit" value=title}}
+  {{input class="edit" value=body}}
+  <button {{action "acceptChanges"}}>Save</button>
+  <button {{action "cancelEditing"}}>Cancel</button>
+{{else}}
+  <h1>{{title}}</h1>
+  <p>{{body}}</p>
+  <button {{action "editPost"}}>Edit</button>
+{{/if}}
 
-<p>{{body}}</p>

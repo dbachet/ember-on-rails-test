@@ -14,6 +14,8 @@ class Api::V1::PostsController < ApplicationController
 
     if @post.save
       render json: @post
+    else
+      render json: { errors: @post.errors }, status: 422
     end
   end
 

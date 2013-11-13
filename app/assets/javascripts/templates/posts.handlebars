@@ -1,9 +1,19 @@
 <h1>Posts</h1>
 
 <div>
-  {{input type="text" placeholder="Title?" value=newTitle}}
+  <div {{bind-attr class="errors.title:error"}}>
+    {{input type="text" placeholder="Title?" value=newTitle}}
+    {{#if errors.title}}
+      {{errors.title}}
+    {{/if}}
+  </div>
 
-  {{input type="text" placeholder="Body?" value=newBody}}
+  <div {{bind-attr class="errors.body:error"}}>
+    {{input type="text" placeholder="Body?" value=newBody}}
+    {{#if errors.body}}
+      {{errors.body}}
+    {{/if}}
+  </div>
 
   <button {{action createPost}}>Save</button>
 </div>

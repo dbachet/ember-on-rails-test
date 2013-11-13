@@ -20,11 +20,13 @@
 
 <ul>
   {{#each}}
-    <li>
-      {{#linkTo "post" this}}
-        {{title}}
-      {{/linkTo}}
-    </li>
+    {{#if id}}
+      <li>
+        {{#linkTo "post" this}}
+          {{title}}
+        {{/linkTo}}
+      </li>
+    {{/if}}
   {{else}}
     <li>
       There are no posts.

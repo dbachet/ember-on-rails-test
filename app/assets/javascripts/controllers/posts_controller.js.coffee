@@ -18,10 +18,10 @@ EmberOnRailsTest.PostsController = Ember.ArrayController.extend
         @set 'newBody', ''
         @transitionToRoute('post', post);
       ), (result)=>
+        post.deleteRecord()
         if result.status == 422
           errors = jQuery.parseJSON(result.responseText).errors
           @set "errors", errors
-          post.rollback()
         else
           console.log "An error occured during validation " + result.responseText
           alert "An error occured - REST API not available - Please try again"

@@ -24,6 +24,8 @@ class Api::V1::PostsController < ApplicationController
 
     if @post.update_attributes(params[:post])
       render json: @post
+    else
+      render json: { errors: @post.errors }, status: 422
     end
   end
 end

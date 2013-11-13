@@ -1,6 +1,16 @@
 {{#if isEditing}}
-  {{input class="edit" value=title}}
-  {{input class="edit" value=body}}
+  <div {{bind-attr class="errors.title:error"}}>
+    {{input class="edit" value=title}}
+    {{#if errors.title}}
+      {{errors.title}}
+    {{/if}}
+  </div>
+  <div {{bind-attr class="errors.body:error"}}>
+    {{input class="edit" value=body}}
+    {{#if errors.body}}
+      {{errors.body}}
+    {{/if}}
+  </div>
   <button {{action "acceptChanges"}}>Save</button>
   <button {{action "cancelEditing"}}>Cancel</button>
 {{else}}

@@ -1,6 +1,7 @@
 <h1>Posts</h1>
 
 <div>
+  <h2>New Post</h2>
   <div {{bind-attr class="errors.title:error"}}>
     {{input type="text" placeholder="Title?" value=newTitle}}
     {{#if errors.title}}
@@ -15,7 +16,7 @@
     {{/if}}
   </div>
 
-  <button {{action createPost}}>Save</button>
+  <button {{action createPost}}>Save new Post</button>
 </div>
 
 <ul>

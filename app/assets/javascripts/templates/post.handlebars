@@ -1,4 +1,5 @@
 {{#if isEditing}}
+  <h2>Edit Post</h2>
   <div {{bind-attr class="errors.title:error"}}>
     {{input class="edit" value=title}}
     {{#if errors.title}}
@@ -14,8 +15,10 @@
   <button {{action "acceptChanges"}}>Save</button>
   <button {{action "cancelEditing"}}>Cancel</button>
 {{else}}
+  <h2>Show Post</h2>
   <h1>{{title}}</h1>
   <p>{{body}}</p>
   <button {{action "editPost"}}>Edit</button>
+  <button {{action "removePost"}}>Delete</button>
 {{/if}}
 
